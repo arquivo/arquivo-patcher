@@ -1,6 +1,6 @@
 # arquivo-patcher
 
-Node.JS App that patches Arquivo.pt Web Archives
+Patching Arquivo.pt web archived pages using puppeteer to automate browser behavior
 
 ### Installing
 
