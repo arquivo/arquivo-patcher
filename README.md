@@ -11,6 +11,20 @@ npm install
 ### Patchinve Webpages
 ```
 node app/app.js patch --help
+
+Launch puppeteer to patch arquivo.pt webarchives.
+
+Options:
+  --version           Show version number                              [boolean]
+  --help, -h          Show help                                        [boolean]
+  --num_browsers, -b  The number of browsers instances to use.
+                                                           [number] [default: 1]
+  --num_pages, -p     The number of tabs pages for each browser instance top
+                      use.                                 [number] [default: 1]
+  --urls_list, -i     List of urls to patch.
+                                          [string] [default: "./tests/urls.txt"]
+  --timeout, -t       browsing page timeout            [number] [default: 90000]
+
 ```
 
 
