@@ -87,6 +87,7 @@ console.log("Lauching patching with %i browsers and %i page tabs.", num_browsers
                             await page.close();
                         }
                         }
+                        await new Promise(r => setTimeout(r, wait_time_between_pages));
                     }
                     resPage()
                 }));
