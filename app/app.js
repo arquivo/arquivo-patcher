@@ -34,6 +34,12 @@ const argv = yargs
             type: 'number',
             default: 90000
         })
+        .option( 'wait_time_between_pages', {
+            description: 'time to wait between page requests',
+            alias: 'w',
+            type: 'number',
+            default: 60000
+        })
     })
     .help()
     .alias('help', 'h')
@@ -65,6 +71,7 @@ console.log("Lauching patching with %i browsers and %i page tabs.", num_browsers
                         if (url != ''){
                          console.log("Patching URL", url);
                         let page = await browser.newPage();
+                        await page.setUserAgent("Arquivo-web-crawler")
                         page.setDefaultNavigationTimeout(timeout);
                         let before = Date.now();
                         try{
