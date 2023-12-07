@@ -20,10 +20,7 @@
   },
   "homepage": "https://github.com/arquivo/puppeteer-webrender#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "puppeteer": "^2.0.0",
-    "puppeteer-har": "^1.1.2",
+    "puppeteer": "^21.5.0",
     "yargs": "^15.1.0"
   }
 }

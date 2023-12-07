@@ -1,8 +1,8 @@
-FROM node:10.17.0-slim
+FROM node:lts-buster
 
 WORKDIR /patcher
 
-RUN  apt-get update \
+RUN apt-get update \
      # Install latest chrome dev package, which installs the necessary libs to
      # make the bundled version of Chromium that Puppeteer installs work.
      && apt-get install -y wget --no-install-recommends \
