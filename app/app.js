@@ -34,6 +34,12 @@ const argv = yargs
             type: 'number',
             default: 90000
         })
+        .option( 'wait_time', {
+            description: 'time to wait between page requests',
+            alias: 'w',
+            type: 'number',
+            default: 60000
+        })
     })
     .help()
     .alias('help', 'h')
@@ -44,7 +50,7 @@ const num_browsers = argv.num_browsers
 const num_pages = argv.num_pages
 const urls_list = argv.urls_list;
 const timeout = argv.timeout;
-const wait_time = argv.wait_time_between_pages
+const wait_time = argv.wait_time
 
 console.log("Lauching patching with %i browsers and %i page tabs.", num_browsers, num_pages);
 
@@ -66,6 +72,7 @@ console.log("Lauching patching with %i browsers and %i page tabs.", num_browsers
                         if (url != ''){
                          console.log("Patching URL", url);
                         let page = await browser.newPage();
+                        page.setUserAgent("Arquivo-web-crawler (compatible; pywb +https://arquivo.pt/faq-crawling)")
                         page.setDefaultNavigationTimeout(timeout);
                         let before = Date.now();
                         try{
