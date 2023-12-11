@@ -44,6 +44,7 @@ const num_browsers = argv.num_browsers
 const num_pages = argv.num_pages
 const urls_list = argv.urls_list;
 const timeout = argv.timeout;
+const wait_time = argv.wait_time_between_pages
 
 console.log("Lauching patching with %i browsers and %i page tabs.", num_browsers, num_pages);
 
@@ -80,6 +81,7 @@ console.log("Lauching patching with %i browsers and %i page tabs.", num_browsers
                             await page.close();
                         }
                         }
+                        await new Promise(r => setTimeout(r, wait_time));
                     }
                     resPage()
                 }));
